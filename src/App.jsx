@@ -7,6 +7,7 @@ import ExtintasLayer from './components/ExtintasLayer';
 import FundosLayer from './components/FundosLayer';
 import AllCities from './components/AllCities';
 import MinimapControl from './components/MinimapControl';
+import GlobalStyle from './styles/styles.globalStyle';
 
 function App() {
 
@@ -245,7 +246,7 @@ function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <LayersControl position="topright">
+        <LayersControl position="bottomleft">
           <LayersControl.Overlay checked name="Existentes geojson">
             <ExistentesLayer />
           </LayersControl.Overlay>
@@ -263,14 +264,14 @@ function App() {
           </LayersControl.Overlay>
 
 
-          <LayersControl.Overlay name='teste'>
-              <AllCities citiesData={citiesData} onClick={handleCityClick} />
-          </LayersControl.Overlay>
+          
 
 
         </LayersControl>
 
-        <MinimapControl position="bottomleft" />
+        <MinimapControl position="bottomright" />
+              <AllCities citiesData={citiesData} onClick={handleCityClick} />
+              <GlobalStyle />
       </MapContainer>
     </>
   );

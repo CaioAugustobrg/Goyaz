@@ -1,25 +1,43 @@
 import styled from 'styled-components';
 import { GiVillage } from 'react-icons/gi';
 import {LayersControl} from 'react-leaflet'
-export const StyledLayersControl = styled(LayersControl)`
+
+export const Container = styled.div`
+position: relative;
+height: 400px;
+width: 200px;
+
+margin-left: auto;
+z-index: 4999;
+`
+export const StyledLayersControl = styled.div`
+
   position: absolute;
-  top: 8%;
-  left: 90%;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  margin-left: auto;
   background-clip: padding-box;
   z-index: 1001;
-  background-color: #fff;
-  margin-right: 10px;
-  margin-top: 10px;
+  top: 40px;
   width: auto;
+  background-color: #fff;
   border-radius: 5px;
   font-size: 0.75rem;
   line-height: 1.5;
-  height: 300px;
+  height: inherit;
   width: 180px;
   overflow-y: auto;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 19.5px;
   overflow-x: hidden;
-
+  border: 2px solid rgba(0, 0, 0, 0.2);
+    div {
+ span {
+  &:hover {
+        color: black;
+        cursor: pointer;
+      }
+ }
+    }
   @media (max-width: 768px) {
     width: 90%;
     height: auto;
@@ -27,27 +45,12 @@ export const StyledLayersControl = styled(LayersControl)`
     overflow-y: auto;
   }
 
-  SC-bcPKhP.ealKES {
-    width: inherit;
-    padding: 5px;
-    height: auto;
-
-    span {
-      color: red;
-      cursor: pointer;
-      display: flex;
-
-      &:hover {
-        color: black;
-      }
-    }
-  }
 `;
 
 export const CitiesBox = styled.div`
+top: 0;
+right: 0 ;
   position: absolute;
-  top: 6%;
-  left: 97%;
   border: 2px solid rgba(0, 0, 0, 0.2);
   background-clip: padding-box;
   z-index: 1000;
