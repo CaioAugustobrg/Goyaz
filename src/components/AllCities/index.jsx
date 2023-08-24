@@ -21,7 +21,7 @@ const AllCities = ({ citiesData, onClick }) => {
         <Box onMouseLeave={handleShowLayersMouseOff}>
       {citiesData.map((city) => (
           <div className='SC-bcPKhP.ealKES' key={city.name} >
-          <span onClick={() => handleClick(city.coordinates)}>{city.name}</span>
+          <span style={{color: red}} onClick={() => handleClick(city.coordinates)}>{city.name}</span>
         </div>
       ))}
     </Box>
