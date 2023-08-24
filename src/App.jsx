@@ -9,7 +9,7 @@ import AllCities from './components/AllCities';
 import MinimapControl from './components/MinimapControl';
 
 function App() {
-  
+
   const citiesData = [
     {
       name: 'Alemão',
@@ -156,9 +156,9 @@ function App() {
       coordinates: [-14.761606, -49.581199],
     },
     {
-       name: 'Pilões',
-       coordinates: [-16.437232,  -51.113811],
-     },
+      name: 'Pilões',
+      coordinates: [-16.437232, -51.113811],
+    },
     {
       name: 'Porto Imperial',
       coordinates: [-10.707867, -48.417208],
@@ -173,7 +173,7 @@ function App() {
     },
     {
       name: 'Ruínas - Arraial de Pontal',
-      coordinates: [-10.776024297232002,  -48.56001816667665],
+      coordinates: [-10.776024297232002, -48.56001816667665],
     },
     {
       name: 'Santa Cruz',
@@ -230,49 +230,47 @@ function App() {
   const handleCityClick = (cityCoordinates) => {
     setMapCenter(cityCoordinates);
     map.flyTo(cityCoordinates, 14);
-    setMapKey(Date.now()); 
+    setMapKey(Date.now());
   };
   useEffect(() => {
     if (mapRef.current) {
       const map = mapRef.current;
-      map.flyTo(mapCenter, map.getZoom()); 
+      map.flyTo(mapCenter, map.getZoom());
     }
   }, [mapCenter]);
   return (
     <>
       <MapContainer key={mapKey} ref={mapRef} center={mapCenter} zoom={14} style={{ overflow: 'hidden', width: '100%', height: '100vh' }}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
         <LayersControl position="topright">
           <LayersControl.Overlay checked name="Existentes geojson">
-            <ExistentesLayer /> 
+            <ExistentesLayer />
           </LayersControl.Overlay>
 
           <LayersControl.Overlay checked name="Provaveis geojson">
-            <ProvaveisLayer /> 
+            <ProvaveisLayer />
           </LayersControl.Overlay>
 
           <LayersControl.Overlay checked name="Extintas geojson">
-            <ExtintasLayer /> 
+            <ExtintasLayer />
           </LayersControl.Overlay>
 
           <LayersControl.Overlay checked name="Fundos geojson">
-            <FundosLayer /> 
+            <FundosLayer />
           </LayersControl.Overlay>
 
 
-  {citiesData.map(city => (
-    <LayersControl.Overlay  key={city.name} name={city.name}>
-      <AllCities citiesData={citiesData} onClick={handleCityClick} />
-    </LayersControl.Overlay>
-  ))}
+          <LayersControl.Overlay name='teste'>
+              <AllCities citiesData={citiesData} onClick={handleCityClick} />
+          </LayersControl.Overlay>
 
 
         </LayersControl>
 
-       <MinimapControl position="bottomleft" />
+        <MinimapControl position="bottomleft" />
       </MapContainer>
     </>
   );

@@ -15,6 +15,7 @@ const AllCities = ({ citiesData, onClick }) => {
   const handleShowLayersMouseOff = () => {
     setShowLayers(!showLayers)
   }
+  console.log(citiesData)
   return (
     <>
     { showLayers && ( 
@@ -28,8 +29,8 @@ const AllCities = ({ citiesData, onClick }) => {
       )
     } 
     <CitiesBox onMouseEnter={handleShowLayersMouseOn} >
-   <StyledGiVillage />
-  </CitiesBox>
+      <StyledGiVillage />
+    </CitiesBox>
     </>
   );
 };
