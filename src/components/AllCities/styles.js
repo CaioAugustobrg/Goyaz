@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { GiVillage } from 'react-icons/gi';
 import {LayersControl} from 'react-leaflet'
-
+import  {Rectangle} from 'react-leaflet'
 export const Container = styled.div`
-position: relative;
+position: absolute;
 height: 400px;
 width: 200px;
-
-margin-left: auto;
+right: 0;
 z-index: 4999;
 `
 export const StyledLayersControl = styled.div`
