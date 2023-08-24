@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { GiVillage } from 'react-icons/gi';
-
-export const Box = styled.div`
+import {LayersControl} from 'react-leaflet'
+export const StyledLayersControl = styled(LayersControl)`
   position: absolute;
   top: 8%;
   left: 90%;

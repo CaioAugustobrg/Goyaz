@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box,StyledGiVillage,CitiesBox } from './styles';
+import { StyledLayersControl,StyledGiVillage,CitiesBox } from './styles';
 
 const AllCities = ({ citiesData, onClick }) => {
     const [showLayers, setShowLayers] = useState(false)
@@ -19,13 +19,13 @@ const AllCities = ({ citiesData, onClick }) => {
   return (
     <>
     { showLayers && ( 
-        <Box onMouseLeave={handleShowLayersMouseOff}>
+        <StyledLayersControl onMouseLeave={handleShowLayersMouseOff}>
       {citiesData.map((city) => (
           <div className='SC-bcPKhP.ealKES' key={city.name} >
           <span style={{color: 'red'}} onClick={() => handleClick(city.coordinates)}>{city.name}</span>
         </div>
       ))}
-    </Box>
+    </StyledLayersControl>
       )
     } 
     <CitiesBox onMouseEnter={handleShowLayersMouseOn} >
