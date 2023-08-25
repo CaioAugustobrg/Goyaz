@@ -403,19 +403,19 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <LayersControl position="bottomleft">
-          <LayersControl.Overlay checked name="Existentes geojson">
+          <LayersControl.Overlay checked name="Edificações existentes">
             <ExistentesLayer />
           </LayersControl.Overlay>
 
-          <LayersControl.Overlay checked name="Provaveis geojson">
+          <LayersControl.Overlay checked name="Edificações propáveis">
             <ProvaveisLayer />
           </LayersControl.Overlay>
 
-          <LayersControl.Overlay checked name="Extintas geojson">
+          <LayersControl.Overlay checked name="Edificações extintas">
             <ExtintasLayer />
           </LayersControl.Overlay>
 
-          <LayersControl.Overlay checked name="Fundos geojson">
+          <LayersControl.Overlay checked name="Arruamento urbano">
             <FundosLayer />
           </LayersControl.Overlay>
 
