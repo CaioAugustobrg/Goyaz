@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import {FaMapMarkerAlt} from 'react-icons/fa'
 import { MapContainer, TileLayer, LayersControl, Marker, Popup } from 'react-leaflet';
 import { StyledGiVillage, CitiesBox } from './styles';
 
@@ -29,7 +30,7 @@ const AllCities = ({ citiesData, onClick }) => {
 
           <LayersControl position="topright">
               {citiesData.map((city) => (
-            <LayersControl.Overlay name={city.name}>
+            <LayersControl.Overlay key={city.name} name={city.name}>
                <Marker position={city.coordinates}>
                   <Popup>
                     <div style={{ flexDirection: 'column' }}>
