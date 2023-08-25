@@ -31,10 +31,6 @@ const AllCities = ({ citiesData, onClick }) => {
 
     iconAnchor: [19, 12], 
   });
-
-  const customDic = L.Layer({
-    
-  })
   return (
     <>
 
