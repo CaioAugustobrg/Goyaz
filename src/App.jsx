@@ -407,7 +407,7 @@ function App() {
             <ExistentesLayer />
           </LayersControl.Overlay>
 
-          <LayersControl.Overlay checked name="Edificações propáveis">
+          <LayersControl.Overlay checked name="Edificações prováveis">
             <ProvaveisLayer />
           </LayersControl.Overlay>
 
